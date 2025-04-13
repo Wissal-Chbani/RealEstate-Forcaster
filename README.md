@@ -33,29 +33,16 @@ Ce projet vise à prédire les prix de l'immobilier à Paris à l'aide de modèl
 6. [Frontend – Application React](#6-frontend--application-react)  
   6.1 [Interface Utilisateur](#61-interface-utilisateur)  
   6.2 [Connexion à l’API](#62-connexion-à-lapi)  
-  6.3 [Design Mobile-First](#63-design-mobile-first)  
+  6.3 [Design Responsive](#63-design-responsive)  
+  6.4 [Captures d’écran](#64-captures-décran)
+
 
 7. [Carte Interactive](#7-carte-interactive)  
   7.1 [Objectif](#71-objectif)  
   7.2 [Fonctionnalités](#72-fonctionnalités)  
   7.3 [Technologies Utilisées](#73-technologies-utilisées)  
 
-8. [Fonctionnalités Avancées](#8-fonctionnalités-avancées)  
-  8.1 [Simulation de Scénarios](#81-simulation-de-scénarios)  
-  8.2 [Évaluation de Risques](#82-évaluation-de-risques)  
-  8.3 [Visualisation Dynamique](#83-visualisation-dynamique)  
-
-9. [Défis et Limitations](#9-défis-et-limitations)  
-  9.1 [Problèmes de Données](#91-problèmes-de-données)  
-  9.2 [Contraintes Techniques](#92-contraintes-techniques)  
-  9.3 [Performance et Scalabilité](#93-performance-et-scalabilité)  
-
-10. [Pistes d’Amélioration](#10-pistes-damélioration)  
-  10.1 [Données en Temps Réel](#101-données-en-temps-réel)  
-  10.2 [Extension Géographique](#102-extension-géographique)  
-  10.3 [Interface plus Intelligente](#103-interface-plus-intelligente)  
-
-11. [Conclusion](#11-conclusion)
+8. [Conclusion](#8-conclusion)
 
 ---
 
@@ -293,31 +280,106 @@ L'API repose sur Django pour créer les endpoints RESTful qui traitent les requ�
 Le frontend (React) communique avec l'API Django via des requêtes HTTP envoyées avec Axios. Les données sont envoyées en JSON et la réponse contient la prédiction du prix immobilier.
 
 
+<div align="right">
+
+[⬆ Back to top](#top)
+
+</div>
+
+
+## 6. Frontend – Application React
+
+Le frontend est développé en React, en se basant sur une maquette Figma initialement conçue pour mobile. L’interface a ensuite été adaptée pour les écrans plus larges, mais sans suivre strictement une approche mobile-first.
+
+### 6.1 Interface Utilisateur
+L'application propose une interface simple et intuitive permettant à l'utilisateur de :
+- Renseigner les caractéristiques d’un bien immobilier (surface, localisation, type, etc.).
+- Lancer la prédiction du prix.
+- Visualiser le prix estimé en temps réel.
+
+### 6.2 Connexion à l’API
+Le frontend utilise Axios pour communiquer avec l’API Django. Lors de la soumission du formulaire, les données sont envoyées via une requête POST, et le prix prédit est affiché à l’utilisateur.
+
+### 6.3 Design Responsive
+Bien que la maquette de départ ait été conçue pour mobile, l’implémentation s’est orientée vers un design responsive, adapté manuellement aux différentes tailles d’écran. Les composants React sont organisés de manière modulaire pour garantir maintenabilité et réutilisabilité.
+
+### 6.4 Captures d’écran
+Voici quelques captures de l’interface utilisateur :
+
+#### Home Page:
+![Home Page](./screenshots/homepage.png)
+
+#### About Us Page:
+![About Us Page](./screenshots/about.png)
+
+#### Forcaster Page:
+Ce page combine le formulaire de saisie et la carte interactive pour la prédiction.
+- **Formulaire de saisie :**
+![Formulaire de saisie](./screenshots/formulaire.png)
+- **Résultat de la prédiction :**
+![Résultat de la prédiction](./screenshots/resultat.png)
+
+#### Premium Page:
+Cette page propose différentes options d'abonnement :
+- Starter / Free
+- Professional (€29/month)
+- Enterprise / Custom  
+![Premium Page](./screenshots/premium.png)
+
+#### Contact Page:
+![Contact Page](./screenshots/contact.png)
 
 
 
+<div align="right">
+
+[⬆ Back to top](#top)
+
+</div>
 
 
+# 7. Carte Interactive
+
+La carte interactive permet aux utilisateurs d’explorer visuellement les quartiers de Paris et d’accéder aux prédictions de prix en fonction de la localisation.
+
+## 7.1 Objectif
+- Fournir une représentation géographique dynamique des biens immobiliers.
+- Permettre à l’utilisateur de sélectionner une zone sur la carte pour obtenir une estimation des prix immobiliers.
+- Intégrer les données environnementales (proximité des équipements, espaces verts, monuments) dans l’analyse prédictive.
+
+## 7.2 Fonctionnalités
+- **Sélection géographique :** Cliquer sur la carte pour définir la localisation du bien.
+- **Affichage des prédictions :** Visualiser instantanément le prix prédit pour la zone sélectionnée.
+- **Navigation interactive :** Zoomer, dézoomer et parcourir la carte pour explorer différentes zones de Paris.
+- **Intégration des indices environnementaux :** Affichage des indicateurs clés (proximité des équipements, espaces verts, etc.) influençant la prédiction.
+
+## 7.3 Technologies Utilisées
+- **Leaflet.js / Mapbox GL JS :** Pour le rendu et la manipulation de la carte interactive.
+- **React :** Pour l’intégration et la gestion dynamique des composants cartographiques.
+- **Axios :** Pour la communication avec l’API backend et la récupération des prédictions en temps réel.
 
 
+<div align="right">
+
+[⬆ Back to top](#top)
+
+</div>
 
 
+# 8. Conclusion
+
+Nous avons développé une solution complète pour prédire les prix immobiliers à Paris en combinant des données ouvertes, le web scraping et des techniques avancées de machine learning. La fusion des données foncières, des équipements urbains, des espaces verts et des monuments, enrichie par un travail de feature engineering, a permis de construire un modèle prédictif performant.
+
+L’architecture modulaire de l’application, avec un backend Django exposant une API REST et un frontend React interactif, offre une expérience utilisateur fluide et une grande évolutivité pour intégrer de futures améliorations.
+
+Ce projet illustre comment l’intégration de multiples sources de données et l’utilisation d’approches innovantes permettent d’anticiper l’évolution du marché immobilier sur le long terme.
 
 
+<div align="right">
 
+[⬆ Back to top](#top)
 
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 ## Les Contributeurs

@@ -46,9 +46,11 @@ N'hésitez pas à y accéder pour obtenir l'intégralité des ressources.
 7. [Carte Interactive](#7-carte-interactive)  
   7.1 [Objectif](#71-objectif)  
   7.2 [Fonctionnalités](#72-fonctionnalités)  
-  7.3 [Technologies Utilisées](#73-technologies-utilisées)  
+  7.3 [Technologies Utilisées](#73-technologies-utilisées)
 
-8. [Conclusion](#8-conclusion)
+8. [Installation et Configuration](#8-installation-et-configuration)
+
+9. [Conclusion](#9-conclusion)
 
 ---
 
@@ -350,7 +352,71 @@ La carte interactive permet aux utilisateurs d’explorer visuellement les quart
 </div>
 
 
-# 8. Conclusion
+# 9. Installation et Configuration
+
+# Instructions pour Faire Fonctionner l'Application
+
+## 1. Lancer le Backend (Django)
+
+### Étape 1 : Accéder au dossier backend
+
+Ouvrez un terminal et naviguez jusqu'au dossier où se trouve le backend de l'application. Par exemple, si votre projet est dans le dossier `RealEstateProject`, allez dans le dossier `backend` :
+
+```bash
+cd /chemin/vers/le/dossier/backend
+```
+
+### Étape 2 : Activer l'environnement virtuel
+
+Dans le terminal, exécutez la commande suivante pour activer l'environnement virtuel de Python :
+
+```bash
+.\venv\Scripts\activate
+```
+
+Cela activera l'environnement virtuel et vous permettra d'utiliser les bibliothèques Python nécessaires au fonctionnement de l'application.
+
+### Étape 3 : Lancer le serveur Django
+Ensuite, lancez le serveur Django avec la commande suivante :
+
+```bash
+python manage.py runserver
+```
+
+Cela démarrera le serveur de développement sur le port indiqué dans votre terminal. Vous pouvez maintenant accéder à l'endpoint de prédiction via : http://localhost:<port_indiqué>/api/predict.
+
+## 2. Lancer le Frontend (React)
+
+Ouvrez un autre terminal et naviguez jusqu'au dossier du frontend de l'application. Par exemple :
+
+```bash
+cd /chemin/vers/le/dossier/frontend
+```
+
+### Étape 2 : Installer les dépendances
+
+Si vous ne l'avez pas encore fait, installez les dépendances nécessaires pour le frontend avec npm (Node Package Manager) :
+
+```bash
+npm install
+```
+
+### Étape 3 : Démarrer le serveur de développement React
+Lancez le serveur de développement pour le frontend avec la commande suivante :
+
+```bash
+npm run dev
+```
+
+Cela démarrera le serveur React sur le port indiqué dans votre terminal, et vous pourrez accéder à l'interface utilisateur dans votre navigateur.
+
+
+
+
+
+
+
+# 9. Conclusion
 
 Nous avons développé une solution complète pour prédire les prix immobiliers à Paris en combinant des données ouvertes, le web scraping et des techniques avancées de machine learning. La fusion des données foncières, des équipements urbains, des espaces verts et des monuments, enrichie par un travail de feature engineering, a permis de construire un modèle prédictif performant.
 

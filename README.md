@@ -306,28 +306,35 @@ Bien que la maquette de départ ait été conçue pour mobile, l’implémentati
 ### 6.4 Captures d’écran
 Voici quelques captures de l’interface utilisateur :
 
-#### Home Page:
-![Home Page](./screenshots/homepage.png)
 
-#### About Us Page:
-![About Us Page](./screenshots/about.png)
+<div align="center" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+   <h3>Home Page</h3>
+   <img src="screenshots/home.png" style="width: 80%; max-width: 600px; height: auto; display: block; margin: 20px auto; border: 2px solid #ccc; border-radius: 10px;" alt="Aperçu de l'image">
+   <h3>About Us Page</h3>
+   <img src="screenshots/aboutus.png" style="width: 80%; max-width: 600px; height: auto; display: block; margin: 20px auto; border: 2px solid #ccc; border-radius: 10px;" alt="Aperçu de l'image">
+   <h3>Forcaster Page</h3>
+   <img src="screenshots/forcaster.png" style="width: 80%; max-width: 600px; height: auto; display: block; margin: 20px auto; border: 2px solid #ccc; border-radius: 10px;" alt="Aperçu de l'image">
+   <h3>Premium Page</h3>
+   <img src="screenshots/premium.png" style="width: 80%; max-width: 600px; height: auto; display: block; margin: 20px auto; border: 2px solid #ccc; border-radius: 10px;" alt="Aperçu de l'image">
+   <h3>Contact Page</h3>
+   <img src="screenshots/contact.png" style="width: 80%; max-width: 600px; height: auto; display: block; margin: 20px auto; border: 2px solid #ccc; border-radius: 10px;" alt="Aperçu de l'image">
+   
+   
+   
+</div>
 
-#### Forcaster Page:
-Ce page combine le formulaire de saisie et la carte interactive pour la prédiction.
-- **Formulaire de saisie :**
-![Formulaire de saisie](./screenshots/formulaire.png)
-- **Résultat de la prédiction :**
-![Résultat de la prédiction](./screenshots/resultat.png)
 
-#### Premium Page:
-Cette page propose différentes options d'abonnement :
-- Starter / Free
-- Professional (€29/month)
-- Enterprise / Custom  
-![Premium Page](./screenshots/premium.png)
 
-#### Contact Page:
-![Contact Page](./screenshots/contact.png)
+
+
+
+
+
+
+
+
+
+
 
 
 

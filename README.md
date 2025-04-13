@@ -377,7 +377,7 @@ La carte interactive permet aux utilisateurs d’explorer visuellement les quart
 
 # 9. Installation et Configuration
 
-# Instructions pour Faire Fonctionner l'Application
+Instructions pour Faire Fonctionner l'Application
 
 ## 1. Lancer le Backend (Django)
 

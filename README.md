@@ -165,25 +165,48 @@ Cette combinaison de technologies et de bibliothèques permet de construire une 
 
 Un dataset personnalisé a été construit à partir de données ouvertes et de web scraping pour prédire les prix immobiliers à Paris, en tenant compte de l’environnement urbain (espaces verts, équipements publics, monuments).
 
-### 3.1 Sources de Données
-Les principales sources incluent :
-- **Données Foncières (DVF)** : Transactions immobilières à Paris (data.gouv.fr).
-- **Équipements Urbains** : Données INSEE sur les commerces, services, infrastructures, etc.
-- **Espaces Verts** : Données géolocalisées des parcs (Open Data Paris).
-- **Monuments Historiques** : Données extraites par web scraping depuis Paris J’aime.
+## 3.1 Sources de Données
 
-### 3.2 Web Scraping
-Un script de web scraping a été utilisé pour collecter des données complémentaires sur les monuments parisiens, enrichissant ainsi les variables environnementales.
+Les sources suivantes ont été utilisées pour collecter les données nécessaires à la construction du dataset :
 
-### 3.3 Fusion et Prétraitement
-Les différentes sources ont été nettoyées et fusionnées via des jointures géographiques. Des traitements ont été appliqués : nettoyage, formatage des dates, géolocalisation, etc.
+1. *Données Foncières (DVF)*  
+   - *Source :* [data.gouv.fr](https://www.data.gouv.fr/fr/)  
+   - *Description :* Ensemble de données publiques sur les valeurs foncières des biens immobiliers à Paris.
 
-### 3.4 Feature Engineering
-Des variables dérivées ont été créées :
-- **Indices Environnementaux** (parcs, monuments, équipements).
-- **Variables Temporelles** (année, mois de la transaction).
-- **Agrégations Locales** (moyennes par arrondissement).
-Ces features ont renforcé la capacité prédictive du modèle.
+2. *Équipements Parisiens*  
+   - *Source :* [INSEE - Base BPE](https://www.insee.fr/fr/statistiques/8217525?sommaire=8217537&q=bpe)  
+   - *Description :* Informations géolocalisées sur les équipements parisiens tels que les commerces, services, infrastructures sportives et sanitaires.
+
+3. *Espaces Verts*  
+   - *Source :* [Open Data Paris - Espaces Verts](https://opendata.paris.fr/explore/dataset/espaces_verts/table/?disjunctive.type_ev&disjunctive.categorie&disjunctive.adresse_codepostal&disjunctive.presence_cloture)  
+   - *Description :* Données sur les espaces verts, qui peuvent influencer les prix des biens immobiliers en fonction de leur proximité.
+
+4. *Monuments Parisiens*  
+   - *Source :* [Paris J'aime - Monuments](https://parisjetaime.com/article/les-monuments-parisiens-un-patrimoine-exceptionnel-a024)  
+   - *Description :* Extraction de données via web scraping sur les monuments historiques de Paris, éléments importants pour l'impact patrimonial.
+
+## 3.2 Web Scraping
+
+Afin d'enrichir notre dataset avec des informations spécifiques non disponibles directement en open data, un processus de web scraping a été mis en place pour récupérer des données sur les monuments parisiens. Ces données ont permis d'intégrer des variables supplémentaires sur le patrimoine architectural de la ville, un facteur influençant potentiellement les prix immobiliers dans les zones proches.
+
+## 3.3 Fusion et Prétraitement
+
+Une fois les différentes sources de données collectées et nettoyées, un processus de fusion a été réalisé pour assembler ces informations en un seul dataset structuré :
+
+- *Nettoyage des Données DVF :* Suppression des valeurs manquantes et des erreurs.
+- *Fusion des Données Environnementales :* Association des données géolocalisées des équipements, espaces verts et monuments avec les données foncières en fonction de leur proximité géographique.
+- *Prétraitement des Variables :* Formatage des dates, géolocalisation des biens et des équipements, et transformation des données en un format adapté à l’analyse.
+
+## 3.4 Feature Engineering
+
+Dans cette étape, nous avons créé de nouvelles variables à partir des données existantes afin d'enrichir notre modèle prédictif :
+
+- *Création d'Indices Environnementaux :* Par exemple, des indices pour caractériser la densité des espaces verts, la proximité des monuments ou des équipements clés tels que les commerces et les services de santé.
+- *Exploitation de Variables Temporelles :* Utilisation des informations temporelles liées à la date de transaction des biens immobiliers pour extraire des tendances et des périodes de fluctuation des prix.
+- *Agrégations :* Calcul de la moyenne, de la médiane et de la variance pour les différentes zones géographiques (quartiers, arrondissements) en fonction des équipements et de l'environnement.
+
+Ces nouvelles variables créées ont permis d'enrichir le modèle de prédiction et d'améliorer la performance du modèle d'apprentissage automatique.
+
 
 
 

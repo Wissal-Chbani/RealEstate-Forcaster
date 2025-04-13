@@ -4,6 +4,12 @@
 
 Ce projet vise à prédire les prix de l'immobilier à Paris à l'aide de modèles de machine learning, en combinant des données ouvertes, des indicateurs géographiques, et une carte interactive pour une expérience utilisateur enrichie. L'application est développée avec un **frontend React**, un **backend Django REST API**, et des **modèles prédictifs** entraînés en Python.
 
+## Ressources Complémentaires
+
+Certains fichiers volumineux n'étant pas déployés sur GitHub, la version complète du projet (incluant tous les fichiers massifs) est disponible sur [Google Drive](https://drive.google.com/drive/folders/11jk841V25g2KRRz8eLMpLn1c2yFzu4Fh?usp=sharing).  
+N'hésitez pas à y accéder pour obtenir l'intégralité des ressources.
+
+
 ## 📑 Table des Matières
 
 1. [Introduction](#1-introduction)  

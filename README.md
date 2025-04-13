@@ -159,52 +159,30 @@ Cette combinaison de technologies et de bibliothèques permet de construire une 
 
 ---
 
+## 3. Construction du Dataset
 
-# 3. Construction du Dataset
+Un dataset personnalisé a été construit à partir de données ouvertes et de web scraping pour prédire les prix immobiliers à Paris, en tenant compte de l’environnement urbain (espaces verts, équipements publics, monuments).
 
-Dans ce projet, un dataset a été créé à partir de plusieurs sources de données ouvertes et du web scraping pour prédire les prix immobiliers à Paris en intégrant des variables environnementales telles que les équipements urbains, les espaces verts et les monuments.
+### 3.1 Sources de Données
+Les principales sources incluent :
+- **Données Foncières (DVF)** : Transactions immobilières à Paris (data.gouv.fr).
+- **Équipements Urbains** : Données INSEE sur les commerces, services, infrastructures, etc.
+- **Espaces Verts** : Données géolocalisées des parcs (Open Data Paris).
+- **Monuments Historiques** : Données extraites par web scraping depuis Paris J’aime.
 
-## 3.1 Sources de Données
+### 3.2 Web Scraping
+Un script de web scraping a été utilisé pour collecter des données complémentaires sur les monuments parisiens, enrichissant ainsi les variables environnementales.
 
-Les sources suivantes ont été utilisées pour collecter les données nécessaires à la construction du dataset :
+### 3.3 Fusion et Prétraitement
+Les différentes sources ont été nettoyées et fusionnées via des jointures géographiques. Des traitements ont été appliqués : nettoyage, formatage des dates, géolocalisation, etc.
 
-1. **Données Foncières (DVF)**  
-   - **Source :** [data.gouv.fr](https://www.data.gouv.fr/fr/)  
-   - **Description :** Ensemble de données publiques sur les valeurs foncières des biens immobiliers à Paris.
+### 3.4 Feature Engineering
+Des variables dérivées ont été créées :
+- **Indices Environnementaux** (parcs, monuments, équipements).
+- **Variables Temporelles** (année, mois de la transaction).
+- **Agrégations Locales** (moyennes par arrondissement).
+Ces features ont renforcé la capacité prédictive du modèle.
 
-2. **Équipements Parisiens**  
-   - **Source :** [INSEE - Base BPE](https://www.insee.fr/fr/statistiques/8217525?sommaire=8217537&q=bpe)  
-   - **Description :** Informations géolocalisées sur les équipements parisiens tels que les commerces, services, infrastructures sportives et sanitaires.
-
-3. **Espaces Verts**  
-   - **Source :** [Open Data Paris - Espaces Verts](https://opendata.paris.fr/explore/dataset/espaces_verts/table/?disjunctive.type_ev&disjunctive.categorie&disjunctive.adresse_codepostal&disjunctive.presence_cloture)  
-   - **Description :** Données sur les espaces verts, qui peuvent influencer les prix des biens immobiliers en fonction de leur proximité.
-
-4. **Monuments Parisiens**  
-   - **Source :** [Paris J'aime - Monuments](https://parisjetaime.com/article/les-monuments-parisiens-un-patrimoine-exceptionnel-a024)  
-   - **Description :** Extraction de données via web scraping sur les monuments historiques de Paris, éléments importants pour l'impact patrimonial.
-
-## 3.2 Web Scraping
-
-Afin d'enrichir notre dataset avec des informations spécifiques non disponibles directement en open data, un processus de web scraping a été mis en place pour récupérer des données sur les monuments parisiens. Ces données ont permis d'intégrer des variables supplémentaires sur le patrimoine architectural de la ville, un facteur influençant potentiellement les prix immobiliers dans les zones proches.
-
-## 3.3 Fusion et Prétraitement
-
-Une fois les différentes sources de données collectées et nettoyées, un processus de fusion a été réalisé pour assembler ces informations en un seul dataset structuré :
-
-- **Nettoyage des Données DVF :** Suppression des valeurs manquantes et des erreurs.
-- **Fusion des Données Environnementales :** Association des données géolocalisées des équipements, espaces verts et monuments avec les données foncières en fonction de leur proximité géographique.
-- **Prétraitement des Variables :** Formatage des dates, géolocalisation des biens et des équipements, et transformation des données en un format adapté à l’analyse.
-
-## 3.4 Feature Engineering
-
-Dans cette étape, nous avons créé de nouvelles variables à partir des données existantes afin d'enrichir notre modèle prédictif :
-
-- **Création d'Indices Environnementaux :** Par exemple, des indices pour caractériser la densité des espaces verts, la proximité des monuments ou des équipements clés tels que les commerces et les services de santé.
-- **Exploitation de Variables Temporelles :** Utilisation des informations temporelles liées à la date de transaction des biens immobiliers pour extraire des tendances et des périodes de fluctuation des prix.
-- **Agrégations :** Calcul de la moyenne, de la médiane et de la variance pour les différentes zones géographiques (quartiers, arrondissements) en fonction des équipements et de l'environnement.
-
-Ces nouvelles variables créées ont permis d'enrichir le modèle de prédiction et d'améliorer la performance du modèle d'apprentissage automatique.
 
 
 <div align="right">
@@ -217,47 +195,40 @@ Ces nouvelles variables créées ont permis d'enrichir le modèle de prédiction
 ---
 
 
-# 4. Modélisation Prédictive
+# 4. [Modélisation Prédictive](#4-modélisation-prédictive)
 
-Après la construction du dataset enrichi, nous avons appliqué des modèles de machine learning pour prédire les prix immobiliers à Paris en fonction des variables environnementales et des caractéristiques des biens. Cette section décrit le choix des modèles, l'entraînement, la validation, ainsi que l'évaluation des performances.
+Après la construction du dataset enrichi, nous avons appliqué des modèles de machine learning pour prédire les prix immobiliers à Paris. Cette section présente le choix des modèles, l'entraînement, la validation et l'évaluation des performances.
 
-## 4.1 Choix des Modèles
+## 4.1 [Choix des Modèles](#41-choix-des-modèles)
 
-Trois modèles de régression ont été sélectionnés pour cette tâche en raison de leurs performances éprouvées dans des problèmes similaires de prédiction de valeurs continues :
+Trois modèles de régression ont été sélectionnés pour cette tâche :
+- **Random Forest Regressor** : Modèle basé sur l'agrégation de multiples arbres de décision.
+- **CatBoost Regressor** : Modèle de gradient boosting optimisé pour des données catégorielles.
+- **LightGBM Regressor** : Modèle de boosting, rapide et efficace pour de grandes quantités de données.
 
-1. **Random Forest Regressor**  
-   - Modèle basé sur l'agrégation de multiples arbres de décision pour effectuer des prédictions robustes en réduisant la variance.
+Ces modèles ont été évalués sur des versions avec et sans feature engineering pour comparer leurs performances.
 
-2. **CatBoost Regressor**  
-   - Modèle de gradient boosting qui utilise des arbres de décision en combinant les prédictions faibles pour créer un modèle fort, particulièrement efficace avec des données catégorielles.
+## 4.2 [Entraînement et Validation](#42-entraînement-et-validation)
 
-3. **LightGBM Regressor**  
-   - Modèle basé sur le boosting avec des arbres de décision, optimisé pour de grandes quantités de données, avec une meilleure gestion des valeurs manquantes et une rapidité accrue.
+Les modèles ont été entraînés sur un ensemble de données de 80% pour l'entraînement et 20% pour l'évaluation. L’entraînement a inclus un prétraitement des données, l'ajustement des hyperparamètres via validation croisée, et une validation sur un sous-ensemble pour mesurer la performance en temps réel.
 
-Le but de cette sélection est de tester ces différents modèles sur le dataset et de comparer leurs performances.
+## 4.3 [Évaluation des Performances](#43-évaluation-des-performances)
 
-## 4.2 Entraînement et Validation
+Les performances des modèles ont été mesurées sur l'ensemble de test en utilisant les métriques suivantes :
+- **R² (Coefficient de Détermination)**
+- **MSE (Erreur Quadratique Moyenne)**
+- **MAE (Erreur Absolue Moyenne)**
 
-Le processus d'entraînement a consisté à diviser le dataset en un ensemble d'entraînement et un ensemble de test pour éviter le sur-apprentissage. Les modèles ont été entraînés à l'aide des données suivantes :
+### Résultats des Modèles :
 
-- **Ensemble d'Entraînement :** 80% du dataset pour l'entraînement des modèles.
-- **Ensemble de Test :** 20% du dataset pour évaluer la performance des modèles.
+- **Sans Feature Engineering** : Le modèle **LGBM** sur données encodées a montré les meilleurs résultats avec un **R² de 0.6369**. Toutefois, les erreurs absolues et quadratiques étaient relativement élevées, suggérant une marge d'amélioration.
 
-Les étapes de l'entraînement comprennent :
+- **Avec Feature Engineering** : En enrichissant le dataset avec des indices (commerciaux, éducatifs, de santé, etc.), les performances ont nettement progressé. Le modèle **RandomForest** a atteint un **R² de 0.9276**, avec la plus faible **MSE** et **MAE**, surpassant **CatBoost** (R² de 0.9208) et **LightGBM**.
 
-1. **Prétraitement des Données :** Nettoyage, encodage des variables catégorielles, et normalisation des valeurs lorsque nécessaire.
-2. **Entraînement des Modèles :** Ajustement des hyperparamètres pour chaque modèle en utilisant des techniques telles que la validation croisée et la recherche sur grille.
-3. **Validation :** Utilisation d'un sous-ensemble de l'ensemble d'entraînement pour valider les performances des modèles au fur et à mesure de l'entraînement.
+### Choix du Modèle Final :
 
-## 4.3 Évaluation des Performances
+Au terme de cette analyse, **le modèle RandomForest avec feature engineering est retenu** comme le meilleur choix pour la prédiction des prix immobiliers. Ce modèle a montré la meilleure capacité explicative et les erreurs les plus faibles.
 
-Une fois l'entraînement terminé, les modèles ont été évalués sur l'ensemble de test à l'aide de plusieurs métriques de performance courantes pour des problèmes de régression :
-
-- **R² (Coefficient de détermination) :** Mesure la proportion de la variance expliquée par le modèle. Plus la valeur de R² est proche de 1, meilleure est la performance du modèle.
-- **MSE (Mean Squared Error) :** Erreur quadratique moyenne, qui mesure la moyenne des carrés des erreurs entre les valeurs réelles et prédites. Une valeur plus basse indique une meilleure précision du modèle.
-- **MAE (Mean Absolute Error) :** Erreur absolue moyenne, qui mesure la moyenne des écarts absolus entre les valeurs réelles et prédites. Plus cette valeur est faible, plus le modèle est précis.
-
-Les résultats des performances pour chaque modèle ont été enregistrés sur les deux versions du dataset (normalisé et non normalisé) et comparés pour déterminer le modèle le plus performant dans le contexte de notre projet.
 
 
 <div align="right">

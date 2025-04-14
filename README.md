@@ -20,6 +20,7 @@ Une vidéo démonstrative est disponible pour illustrer l’interprétation des 
 1. [Introduction](#1-introduction)  
   1.1 [Objectifs du Projet](#11-objectifs-du-projet)  
   1.2 [Description Générale](#12-description-générale)  
+  1.3 [Diagramme de Cas d'Utilisation](#13-diagramme-de-cas-dutilisation)
 
 2. [Technologies et Outils Utilisés](#2-technologies-et-outils-utilisés)  
   2.1 [Stack Technique](#21-stack-technique)  
@@ -82,6 +83,17 @@ L’architecture du projet repose sur trois piliers :
 - **Un moteur de modélisation avancée**, basé sur des algorithmes robustes comme **CatBoost**, **LightGBM** et **RandomForest**, enrichi par un travail poussé de **feature engineering** intégrant des **indicateurs d’urbanisation future**, extraits de sources ouvertes.
 
 Le projet intègre également une **carte interactive intelligente** qui affiche des prédictions géolocalisées et met en évidence les zones à fort potentiel d’évolution. Grâce à une logique de **scénarisation dynamique**, les utilisateurs peuvent explorer les effets des futurs aménagements sur les prix du m², et ainsi anticiper des opportunités d’investissement.
+
+### 1.3 Diagramme de Cas d'Utilisation
+
+**Description**  
+Le diagramme de cas d'utilisation ci-dessous représente les principales interactions entre les acteurs du système (Administrateur, Utilisateur) et les fonctionnalités qu'ils peuvent effectuer. Les cas d'utilisation communs à plusieurs acteurs, comme "S'inscrire et se connecter", sont également mis en évidence.
+
+**Diagramme**  
+<div align="center" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+  <img src=https://www.plantuml.com/plantuml/png/TPBDJbin48NtVefHDgnO50X55Og8MB6eX9hI_N0z3QR-kPePjq9LtwNBPDENy8lLkN6BWq2wc-Cptpt7FrUYo9g3Dvw-AcW2Tki71UkO1dKf6ldcueYC0N3Gn2jzyWJuWoG5CcPQWwKDBZfHHgNCWB9VQUwTEk_altKdnCRiVeznxGbcgoVHiWa4bk2MozQwAHbkGaZt5IqRfXdyD03roq83IgK-aYeJbD_mc3A39m6ROYnRajaKS_sk7_zKZQYCvK-atJI4PCl6Jw7ZSsX3JthqCudIFe6Y7PEBAZlC7orlRnfm-gBTTOgI_OGX3CXAK35Yh2dVgK5dFR5o8NjYoF6rGlD-z8kJZDu9SUtWmeY3WZtAiNBfaHGotwFxHvuVRALiVTaE3yZh2gSCmtDFaZvN6lxUzFno7Cb3tVRhntQnFuNfyk7uUD4keTSdB_IfCJ0zYQRF3kNyK9xtifMhJ9CNy04kBrqSVBQqM4pU_0tlbxcYQ7FmVm40 alt="Diagramme de Classes" style="width:60%; height:auto; margin:auto;">
+</div>
+
 
 En combinant **données ouvertes, intelligence artificielle et stratégie urbaine**, ce projet vise à devenir une référence en matière de prévision immobilière prospective.
 

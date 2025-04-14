@@ -20,7 +20,8 @@ Une vidéo démonstrative est disponible pour illustrer l’interprétation des 
 1. [Introduction](#1-introduction)  
   1.1 [Objectifs du Projet](#11-objectifs-du-projet)  
   1.2 [Description Générale](#12-description-générale)  
-  1.3 [Diagramme de Cas d'Utilisation](#13-diagramme-de-cas-dutilisation)
+  1.3 [Diagramme de Cas d'Utilisation](#13-diagramme-de-cas-dutilisation)  
+  1.4 [Diagramme de Classe](#14-diagramme-de-classe)
 
 2. [Technologies et Outils Utilisés](#2-technologies-et-outils-utilisés)  
   2.1 [Stack Technique](#21-stack-technique)  
@@ -84,6 +85,8 @@ L’architecture du projet repose sur trois piliers :
 
 Le projet intègre également une **carte interactive intelligente** qui affiche des prédictions géolocalisées et met en évidence les zones à fort potentiel d’évolution. Grâce à une logique de **scénarisation dynamique**, les utilisateurs peuvent explorer les effets des futurs aménagements sur les prix du m², et ainsi anticiper des opportunités d’investissement.
 
+En combinant **données ouvertes, intelligence artificielle et stratégie urbaine**, ce projet vise à devenir une référence en matière de prévision immobilière prospective.
+
 ### 1.3 Diagramme de Cas d'Utilisation
 
 **Description**  
@@ -91,12 +94,18 @@ Le diagramme de cas d'utilisation ci-dessous représente les principales interac
 
 **Diagramme**  
 <div align="center" style="display: flex; justify-content: center; align-items: center; text-align: center;">
-  <img src=https://www.plantuml.com/plantuml/png/TPBDJbin48NtVefHDgnO50X55Og8MB6eX9hI_N0z3QR-kPePjq9LtwNBPDENy8lLkN6BWq2wc-Cptpt7FrUYo9g3Dvw-AcW2Tki71UkO1dKf6ldcueYC0N3Gn2jzyWJuWoG5CcPQWwKDBZfHHgNCWB9VQUwTEk_altKdnCRiVeznxGbcgoVHiWa4bk2MozQwAHbkGaZt5IqRfXdyD03roq83IgK-aYeJbD_mc3A39m6ROYnRajaKS_sk7_zKZQYCvK-atJI4PCl6Jw7ZSsX3JthqCudIFe6Y7PEBAZlC7orlRnfm-gBTTOgI_OGX3CXAK35Yh2dVgK5dFR5o8NjYoF6rGlD-z8kJZDu9SUtWmeY3WZtAiNBfaHGotwFxHvuVRALiVTaE3yZh2gSCmtDFaZvN6lxUzFno7Cb3tVRhntQnFuNfyk7uUD4keTSdB_IfCJ0zYQRF3kNyK9xtifMhJ9CNy04kBrqSVBQqM4pU_0tlbxcYQ7FmVm40 alt="Diagramme de Classes" style="width:60%; height:auto; margin:auto;">
+  <img src=https://www.plantuml.com/plantuml/png/TPFDQXin4CVlUeh15uCXq7mu3IMOc9noA8IcwLrPZUrfzR7LZ5f2wRlqQ5_w4ljYrSfAAvi6zh3_cTzyZ3IwOT5HahFAuaf00aHQRmGCHUo4WbVyXNoletQWEmdnGPujWlwE71mgLMomD8uyiKGjc29etbkgzr784lzrFJ96fSRqsgyjmkJXcMNOEWI3S1-7dQ5I6UwS2qyvTDX6dC0F1P2_nDXf7gEcvBcB515G85kwu7rEYd5Igjo-QUdtA9B9uHTy3Yc2HGQJ-M67NF7J5l-G7LwY7dvx76bmmGnRYvKzQzcFo8BxbEXD7yXBdl_-hhBdHttV1i_9bWWDdOw2G3vBdOV-zbBWuc1ISibcFdc4_j_vL7JUef-8axR4O_OfkJudXHIVDBtGbmUT3pixxBgDZkiwG9EUQyHRrOOi-nxjE1sO_pLpjH-st3wSd2pgDRJwz4YV7UdpNA_iI1FVo8j3EJ-KbwsilUUOAg_W7LnVa-ziChXO5D_y5TzFfNmGhCyXhCPEnj5cisMI3NgX5NMwx6d4huaOPxFHtu_h9I5nESzECvXfgWyWmvbWdLPWw_RsnOZUm5XDtUI_vEmV alt="Diagramme de Classes" style="width:60%; height:auto; margin:auto;">
 </div>
 
+### 1.4 Diagramme de Classe
 
-En combinant **données ouvertes, intelligence artificielle et stratégie urbaine**, ce projet vise à devenir une référence en matière de prévision immobilière prospective.
+**Description**  
+Le diagramme de classe ci-dessous illustre la structure du système en montrant les principales classes impliquées dans le projet et leurs relations. Les classes représentent des entités du domaine, telles que les utilisateurs, les prévisions de prix, et les données géographiques, avec les attributs et méthodes associés.
 
+**Diagramme**  
+<div align="center" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+  <img src=https://www.plantuml.com/plantuml/png/TLJDJjmm4BxdAImkX9P5xJMg44ifqYBHhefu09CCOQX_ql5ufRRgk_HA3ts9l5WT9niI74whpC_tCpFUCyUIs6kLkMze6abIYr99vzRCX7UUOLDQSuC_GRpBifWHQyyFO1ZliPICreXVcH1lXR8rcXohFYKD7mjj-GAseGUEzYNMSzv_4DJe62WtLXyBq1BLlEFtI5XfDA6M98EdWKu3Cy7wodgwiCQqJ-16O32X5WtGjQr0mH1dwEZMsqq-mRvbLEYcmC6lyug1FahYVQz3xHNGbg32iZCzn7Vel0m0G1lTo9AtP1-1Hq85vOEaUjhefkoTSW2tqThU1Hr0uAAAbQZwp3bv3h52N4YMboGrnAmBhai8uHicD7La6vZoi9O71DhdUYa6cEsFa3qAJUVMAf3cvHXdkL5YFy9d_OE-7P0BNtC9uzppGNwnvB1Nr7I813cQndCXhcNJqLygAtco-UqcOGPJDHODpwbhuCbouY47zgkRBvy3RFoTtC2d0MBPSTpxnZ2G36Wx6Ev2tdUJ1HgMUu-AANoLXDovwYqye_INS4jt4lVAiGfq7N0D50F6wgcBbL2sbF4Saz66UEdLS6QzyC3teQyuxkTssh4VYg-W8e3BNZoSrUeqURpPz04i5YoXBDrj8GxUdvoyEUXEIhH_nAFrjDIR75GXg7rQnTjf_nbOwfdVGT6lCKkq9vihnjSyhLs4b4q3IYLrypqMmn-1K8SO5v5bYPtNv-CZD6HpwjbCKZrfyJ8umNVV_cN8aY6aRiTLOLT6jePiQlCrIUtJJYe_DNy6fl9Q_GS0 alt="Diagramme de Classe" style="width:60%; height:auto; margin:auto;">
+</div>
 
 
 <div align="right">

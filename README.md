@@ -9,6 +9,11 @@ Ce projet vise à prédire les prix de l'immobilier à Paris à l'aide de modèl
 Certains fichiers volumineux n'étant pas déployés sur GitHub, la version complète du projet (incluant tous les fichiers massifs) est disponible sur [Google Drive](https://drive.google.com/drive/folders/11jk841V25g2KRRz8eLMpLn1c2yFzu4Fh?usp=sharing).  
 N'hésitez pas à y accéder pour obtenir l'intégralité des ressources.
 
+## Démonstration Video
+
+Une vidéo démonstrative est disponible pour illustrer l’interprétation des résultats dans l’interface utilisateur, après le lancement de l’application.
+
+[Cliquez ici pour visionner la vidéo](https://drive.google.com/drive/folders/168jv6-dKZHcKB2Hs1L5OPzBMldsLZDuJ?usp=drive_link)
 
 ## 📑 Table des Matières
 

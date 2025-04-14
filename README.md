@@ -280,7 +280,19 @@ Les performances des modèles ont été mesurées sur l'ensemble de test en util
 
 Au terme de cette analyse, **le modèle RandomForest avec feature engineering est retenu** comme le meilleur choix pour la prédiction des prix immobiliers. Ce modèle a montré la meilleure capacité explicative et les erreurs les plus faibles.
 
+Voici l'architecture complète de la partie machine learning, intégrant la **collecte des données**, le **feature engineering** et la **modélisation** avec le modèle RandomForest sélectionné :
 
+<div align="center" style="text-align: center;">
+   <img src="screenshots/1.png" 
+        style="width: 50%; 
+               max-width: 400px; 
+               min-width: 250px;
+               height: auto; 
+               border: 1px solid #ddd;
+               border-radius: 8px;
+               box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+        alt="Home Page Preview">
+</div>
 
 <div align="right">
 

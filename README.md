@@ -405,6 +405,19 @@ La carte interactive permet aux utilisateurs d’explorer visuellement les quart
 - **React :** Pour l’intégration et la gestion dynamique des composants cartographiques.
 - **Axios :** Pour la communication avec l’API backend et la récupération des prédictions en temps réel.
 
+Voici l'architecture complète de notre projet
+<div align="center" style="text-align: center;">
+   <img src="screenshots/2.png" 
+        style="width: 50%; 
+               max-width: 400px; 
+               min-width: 250px;
+               height: auto; 
+               border: 1px solid #ddd;
+               border-radius: 8px;
+               box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+        alt="Home Page Preview">
+</div>
+
 
 <div align="right">
 
